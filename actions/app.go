@@ -59,6 +59,7 @@ func App() *buffalo.App {
 
 		app.GET("/", HomeHandler)
 		app.GET("/auth-callback", AuthCallback)
+		app.POST("/notifications", NotificationHandler)
 	}
 
 	return app

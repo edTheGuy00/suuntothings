@@ -19,8 +19,6 @@ import (
 func AuthCallback(c buffalo.Context) error {
 	param := c.Param("code")
 
-	log.Println(param)
-
 	callbackURL := fmt.Sprintf("%s/%s", envy.Get("ENDPOINT", "http://127.0.0.1:3000"), "auth-callback")
 
 	conf := &oauth2.Config{

@@ -58,6 +58,7 @@ func App() *buffalo.App {
 		app.Use(popmw.Transaction(models.DB))
 
 		app.GET("/", HomeHandler)
+		app.GET("/auth-callback", AuthCallback)
 	}
 
 	return app

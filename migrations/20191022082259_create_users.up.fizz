@@ -1,3 +1,11 @@
-create_table("user") {
+create_table("users") {
 	t.Timestamps()
+
+    t.Column("id", "uuid", {"primary": true})
+
+	t.Column("access_token", "text", {})
+     
+    t.Column("refresh_token", "text", {})
+     
+    t.Column("user_name", "string", {})
 }

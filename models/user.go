@@ -16,7 +16,7 @@ type User struct {
 
 	AccessToken  string `json:"access_token" db:"access_token"`
 	RefreshToken string `json:"refresh_token" db:"refresh_token"`
-	SuuntoUserID string `json:"user_id" db:"user_id"`
+	UserName     string `json:"user_name" db:"user_name"`
 }
 
 // String is not required by pop and may be deleted

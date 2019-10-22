@@ -1,6 +1,7 @@
 package actions
 
 import (
+	"fmt"
 	"log"
 
 	"github.com/edTheGuy00/suuntothings/models"
@@ -20,12 +21,14 @@ func AuthCallback(c buffalo.Context) error {
 
 	log.Println(param)
 
+	callbackURL := fmt.Sprintf("%s/%s", envy.Get("ENDPOINT", "http://127.0.0.1:3000"), "auth-callback")
+
 	conf := &oauth2.Config{
 		ClientID:     envy.Get("CLIENT_ID", ""),
 		ClientSecret: envy.Get("CLIENT_SECRET", ""),
 		Scopes:       []string{"activity", "location"},
 		Endpoint: oauth2.Endpoint{
-			AuthURL:  "http://127.0.0.1:3000/auth-callback",
+			AuthURL:  callbackURL,
 			TokenURL: "https://cloudapi-oauth.suunto.com/oauth/token",
 		},
 	}

@@ -53,7 +53,7 @@ func NotificationHandler(c buffalo.Context) error {
 	req, err := http.NewRequest("GET", fmt.Sprintf("%s/%s", "https://cloudapi.suunto.com/v2/workouts", n.WorkoutID), nil)
 	// ...
 	req.Header.Add("content-type", "application/javascript")
-	req.Header.Add("authorization", u.AccessToken)
+	req.Header.Add("authorization", u.RefreshToken)
 	req.Header.Add("ocp-apim-subscription-key", envy.Get("SUBSCRIPTION_KEY", ""))
 	resp, err := client.Do(req)
 

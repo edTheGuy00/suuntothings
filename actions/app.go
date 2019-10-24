@@ -9,7 +9,6 @@ import (
 
 	"github.com/edTheGuy00/suuntothings/models"
 	"github.com/gobuffalo/buffalo-pop/pop/popmw"
-	contenttype "github.com/gobuffalo/mw-contenttype"
 	"github.com/gobuffalo/x/sessions"
 	"github.com/rs/cors"
 )
@@ -50,7 +49,7 @@ func App() *buffalo.App {
 		app.Use(paramlogger.ParameterLogger)
 
 		// Set the request content type to JSON
-		app.Use(contenttype.Set("application/json"))
+		// app.Use(contenttype.Set("application/json"))
 
 		// Wraps each request in a transaction.
 		//  c.Value("tx").(*pop.Connection)

@@ -14,9 +14,9 @@ func LogToSlack(content string) {
 		"token":           {envy.Get("SLACK_TOKEN", "")},
 		"channels":        {envy.Get("SLACK_LOG_CHANNEL", "")},
 		"content":         {content},
-		"filename":        {"fitbit.json"},
+		"filename":        {"suunto.json"},
 		"filetype":        {"json"},
-		"initial_comment": {"test"},
+		"initial_comment": {"new file"},
 	})
 
 	if err != nil {
